@@ -6,8 +6,11 @@
       <!-- animation when leave doesn't work -->
       <!-- <input ref="inputRef" /> -->
 
+      <!-- animation works with shallowRef -->
+      <input ref="inputShallowRef" />
+
       <!-- animation when leave works -->
-      <input />
+      <!-- <input /> -->
 
       <button @click="remove(index)">delete</button>
     </div>
@@ -17,10 +20,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, shallowRef } from "vue";
 
 const counts = ref([1, 2, 3, 4, 5]);
 const inputRef = ref();
+const inputShallowRef = shallowRef();
 
 const add = () => {
   counts.value.push(counts.value[counts.value.length - 1] + 1);
