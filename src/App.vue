@@ -1,13 +1,13 @@
 <template>
   <TransitionGroup name="container" tag="ul" class="container">
-    <div v-for="(_, index) in counts" :key="index">
+    <div v-for="(_, index) in counts" :key="_">
       {{ index }}
 
       <!-- animation when leave doesn't work -->
-      <input ref="inputRef" />
+      <!-- <input ref="inputRef" /> -->
 
       <!-- animation when leave works -->
-      <!-- <input /> -->
+      <input />
 
       <button @click="remove(index)">delete</button>
     </div>
